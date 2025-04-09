@@ -1,0 +1,59 @@
+@keyframes flash {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(82, 196, 26, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.signal-card {
+  transition: all 0.3s;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.signal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.signal-flash {
+  animation: flash 2s infinite;
+}
+
+/* 根据信号类型设置不同的闪烁颜色 */
+.signal-flash[data-signal="金叉"] {
+  animation-name: flash-golden;
+}
+
+.signal-flash[data-signal="死叉"] {
+  animation-name: flash-death;
+}
+
+@keyframes flash-golden {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(245, 34, 45, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@keyframes flash-death {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(82, 196, 26, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+} 
